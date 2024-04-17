@@ -162,6 +162,45 @@ paths:
       - address
       x-content-type: application/json
       x-accepts: application/json
+  /birthdate:
+    get:
+      operationId: listBirthdates
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Birthdate'
+                type: array
+          description: An array of birthdates
+      summary: List all birthdates
+      tags:
+      - birthdate
+      x-accepts: application/json
+  /birthdate/{id}:
+    get:
+      operationId: getBirthdate
+      parameters:
+      - description: The id of the birthdate to retrieve
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Birthdate'
+          description: Expected response to a valid request
+      summary: Info for a specific birthdate
+      tags:
+      - birthdate
+      x-accepts: application/json
 components:
   schemas:
     Town:
@@ -192,4 +231,24 @@ components:
       required:
       - number
       - street
+    Birthdate:
+      example:
+        month: 6
+        year: 1
+        id: id
+        day: 0
+      properties:
+        id:
+          type: string
+        day:
+          type: integer
+        month:
+          type: integer
+        year:
+          type: integer
+      required:
+      - day
+      - id
+      - month
+      - year
 

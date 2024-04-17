@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BirthDateService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">domain</a> &gt; <a href="index.source.html" class="el_package">org.mines.civilstate.domain.service</a> &gt; <span class="el_source">BirthDateService.java</span></div><h1>BirthDateService.java</h1><pre class="source lang-java linenums">package org.mines.civilstate.domain.service;
+
+import org.mines.civilstate.domain.model.BirthDate;
+import org.mines.civilstate.port.driven.BirthDateRepositoryPort;
+import org.mines.civilstate.port.driving.BirthDateUseCase;
+
+import java.util.*;
+
+public class BirthDateService implements BirthDateUseCase {
+
+    private BirthDateRepositoryPort birthDateRepositoryPort;
+
+<span class="fc" id="L13">    public BirthDateService(BirthDateRepositoryPort birthDateRepositoryPort) {</span>
+<span class="fc" id="L14">        this.birthDateRepositoryPort = birthDateRepositoryPort;</span>
+<span class="fc" id="L15">    }</span>
+
+    @Override
+    public BirthDate save(BirthDate birthDate) {
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if (birthDate.day() &lt; 0){</span>
+<span class="nc" id="L20">            throw new IllegalArgumentException(&quot;Day must be greater than 0&quot;);</span>
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        } else if (birthDate.month() &lt; 0){</span>
+<span class="nc" id="L22">            throw new IllegalArgumentException(&quot;Month must be greater than 0&quot;);</span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        } else if (birthDate.year() &lt; 0){</span>
+<span class="nc" id="L24">            throw new IllegalArgumentException(&quot;Year must be greater than 0&quot;);</span>
+        }
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if(birthDate.day() &gt; 31){</span>
+<span class="nc" id="L27">            throw new IllegalArgumentException(&quot;Day must be less than 31&quot;);</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        } else if (birthDate.month() &gt; 12){</span>
+<span class="nc" id="L29">            throw new IllegalArgumentException(&quot;Month must be less than 12&quot;);</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        } else if (birthDate.year() &gt; 2024){</span>
+<span class="nc" id="L31">            throw new IllegalArgumentException(&quot;Year must be less than 2024&quot;);</span>
+        }
+
+<span class="fc" id="L34">        BirthDate b = birthDateRepositoryPort.insert(birthDate);</span>
+<span class="fc" id="L35">        return b;</span>
+    }
+
+    @Override
+    public Collection&lt;BirthDate&gt; list() {
+<span class="fc" id="L40">        return birthDateRepositoryPort.selectAll();</span>
+    }
+
+    @Override
+    public Optional&lt;BirthDate&gt; get(UUID uuid) {
+<span class="nc" id="L45">        return Optional.empty();</span>
+    }
+
+    @Override
+    public Collection&lt;BirthDate&gt; findPeriodOfBirth(int beginDay, int endDay, int beginMonth, int endMonth, int beginYear, int endYear) {
+<span class="nc" id="L50">        return List.of();</span>
+    }
+
+    @Override
+    public Collection&lt;BirthDate&gt; findStartPeriodOfBirth(int beginDay, int beginMonth, int beginYear) {
+<span class="nc" id="L55">        return List.of();</span>
+    }
+
+    @Override
+    public Collection&lt;BirthDate&gt; findEndPeriodOfBirth(int endDay, int endMonth, int endYear) {
+<span class="fc" id="L60">        Collection&lt;BirthDate&gt; birthDates = birthDateRepositoryPort.selectAll();</span>
+<span class="fc" id="L61">        List&lt;BirthDate&gt; birthDatesBeforeEndPeriod = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        for (BirthDate birthDate : birthDates) {</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if (birthDate.year() &lt; endYear ||</span>
+<span class="pc bpc" id="L65" title="3 of 4 branches missed.">                    (birthDate.year() == endYear &amp;&amp; birthDate.month() &lt; endMonth) ||</span>
+<span class="pc bpc" id="L66" title="5 of 6 branches missed.">                    (birthDate.year() == endYear &amp;&amp; birthDate.month() == endMonth &amp;&amp; birthDate.day() &lt;= endDay)) {</span>
+<span class="fc" id="L67">                birthDatesBeforeEndPeriod.add(birthDate);</span>
+            }
+<span class="fc" id="L69">        }</span>
+
+<span class="fc" id="L71">        return birthDatesBeforeEndPeriod;</span>
+    }
+
+    @Override
+    public void remove(UUID uuid) {
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if(birthDateRepositoryPort.select(uuid).isEmpty()){</span>
+<span class="nc" id="L77">            throw new IllegalArgumentException(&quot;BirthDate not found&quot;);</span>
+        }
+<span class="nc" id="L79">        birthDateRepositoryPort.delete(uuid);</span>
+<span class="nc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

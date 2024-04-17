@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.mines.civilstate.domain.service.BirthDateServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-04-16T14:41:46" hostname="CLOUD" time="0.14">
+  <properties/>
+  <testcase name="remove()" classname="org.mines.civilstate.domain.service.BirthDateServiceTest" time="0.075"/>
+  <testcase name="get()" classname="org.mines.civilstate.domain.service.BirthDateServiceTest" time="0.004"/>
+  <testcase name="list()" classname="org.mines.civilstate.domain.service.BirthDateServiceTest" time="0.008"/>
+  <testcase name="save()" classname="org.mines.civilstate.domain.service.BirthDateServiceTest" time="0.009"/>
+  <testcase name="findEndPeriodOfBirth()" classname="org.mines.civilstate.domain.service.BirthDateServiceTest" time="0.036"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

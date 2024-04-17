@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-13T21:35:39.992376400+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-16T16:41:38.192651400+02:00[Europe/Paris]")
 @Validated
 @Tag(name = "address", description = "the address API")
 public interface TownApi {

@@ -2,7 +2,7 @@ apply from: "${rootDir}/gradle/backend-java.gradle"
 apply plugin: 'org.springframework.boot'
 
 bootJar {
-    mainClass="org.mines.address.web.AddressApp"
+    mainClass="org.mines.address.app.AddressApp"
 }
 
 dependencies{

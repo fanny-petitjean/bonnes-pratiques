@@ -145,6 +145,41 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Address"
+  /birthdate:
+    get:
+      summary: List all birthdates
+      operationId: listBirthdates
+      tags:
+        - birthdate
+      responses:
+        '200':
+          description: An array of birthdates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Birthdate'
+  /birthdate/{id}:
+    get:
+      summary: Info for a specific birthdate
+      operationId: getBirthdate
+      tags:
+        - birthdate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the birthdate to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Birthdate"
 
 components:
   schemas:
@@ -169,3 +204,18 @@ components:
           format: int64
         street:
           type: string
+    Birthdate:
+      required:
+        - id
+        - day
+        - month
+        - year
+      properties:
+        id:
+          type: string
+        day:
+          type: integer
+        month:
+          type: integer
+        year:
+          type: integer

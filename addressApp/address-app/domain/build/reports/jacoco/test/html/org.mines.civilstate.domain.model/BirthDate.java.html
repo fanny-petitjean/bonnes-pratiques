@@ -2,8 +2,8 @@
 
 import java.util.UUID;
 
-<span class="nc" id="L5">public record BirthDate(UUID id, int day, int month, int year) {</span>
-<span class="nc" id="L6">    public static final class BirthDateBuilder {</span>
+<span class="fc" id="L5">public record BirthDate(UUID id, int day, int month, int year) {</span>
+<span class="fc" id="L6">    public static final class BirthDateBuilder {</span>
         private UUID id;
         private int day;
         private int month;
@@ -13,30 +13,30 @@ import java.util.UUID;
 <span class="nc" id="L13">        }</span>
 
         public static BirthDateBuilder aBirthDate() {
-<span class="nc" id="L16">            return new BirthDateBuilder();</span>
+<span class="fc" id="L16">            return new BirthDateBuilder();</span>
         }
 
         public BirthDateBuilder withId(UUID id) {
-<span class="nc" id="L20">            this.id = id;</span>
-<span class="nc" id="L21">            return this;</span>
+<span class="fc" id="L20">            this.id = id;</span>
+<span class="fc" id="L21">            return this;</span>
         }
 
         public BirthDateBuilder withDay(int day) {
-<span class="nc" id="L25">            this.day = day;</span>
-<span class="nc" id="L26">            return this;</span>
+<span class="fc" id="L25">            this.day = day;</span>
+<span class="fc" id="L26">            return this;</span>
         }
 
         public BirthDateBuilder withMonth(int month) {
-<span class="nc" id="L30">            this.month = month;</span>
-<span class="nc" id="L31">            return this;</span>
+<span class="fc" id="L30">            this.month = month;</span>
+<span class="fc" id="L31">            return this;</span>
         }
         public BirthDateBuilder withYear(int year) {
-<span class="nc" id="L34">            this.year = year;</span>
-<span class="nc" id="L35">            return this;</span>
+<span class="fc" id="L34">            this.year = year;</span>
+<span class="fc" id="L35">            return this;</span>
         }
 
         public BirthDate build() {
-<span class="nc" id="L39">            return new BirthDate(id, day, month, year);</span>
+<span class="fc" id="L39">            return new BirthDate(id, day, month, year);</span>
         }
     }
 }

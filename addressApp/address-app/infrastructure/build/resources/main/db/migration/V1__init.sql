@@ -9,3 +9,4 @@ create table targetAddress (
 
   address_id uuid REFERENCES address(id), PRIMARY KEY(target_id, address_id));
 
+create table birthdate (id UUID PRIMARY KEY, day NUMERIC, month NUMERIC, year NUMERIC);

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.mines.address.web.controller.BirthDateControllerTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2024-04-17T14:07:37" hostname="CLOUD" time="0.05">
+  <properties/>
+  <testcase name="shouldReturnBirthdateById()" classname="org.mines.address.web.controller.BirthDateControllerTest" time="0.046">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;org.mines.civilstate.port.driving.BirthDateUseCase.get(java.util.UUID)&quot; because &quot;this.birthDateUseCase&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;org.mines.civilstate.port.driving.BirthDateUseCase.get(java.util.UUID)&quot; because &quot;this.birthDateUseCase&quot; is null
+	at org.mines.address.web.controller.BirthDateControllerTest.shouldReturnBirthdateById(BirthDateControllerTest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="shouldReturnNotFoundForNonExistingBirthdate()" classname="org.mines.address.web.controller.BirthDateControllerTest" time="0.002">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;org.mines.civilstate.port.driving.BirthDateUseCase.get(java.util.UUID)&quot; because &quot;this.birthDateUseCase&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;org.mines.civilstate.port.driving.BirthDateUseCase.get(java.util.UUID)&quot; because &quot;this.birthDateUseCase&quot; is null
+	at org.mines.address.web.controller.BirthDateControllerTest.shouldReturnNotFoundForNonExistingBirthdate(BirthDateControllerTest.java:56)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

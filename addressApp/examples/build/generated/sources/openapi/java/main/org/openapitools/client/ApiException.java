@@ -15,7 +15,7 @@ package org.openapitools.client;
 
 import java.net.http.HttpHeaders;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-13T21:35:28.808245800+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-16T16:41:30.730851700+02:00[Europe/Paris]")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 

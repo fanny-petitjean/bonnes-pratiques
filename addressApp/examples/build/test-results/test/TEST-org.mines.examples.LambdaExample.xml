@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.mines.examples.LambdaExample" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-13T19:35:37" hostname="CLOUD" time="0.015">
+<testsuite name="org.mines.examples.LambdaExample" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-16T14:41:35" hostname="CLOUD" time="0.012">
   <properties/>
-  <testcase name="showSomeLambdas()" classname="org.mines.examples.LambdaExample" time="0.015"/>
+  <testcase name="showSomeLambdas()" classname="org.mines.examples.LambdaExample" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
